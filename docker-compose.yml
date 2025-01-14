@@ -1,8 +1,7 @@
-version: "3"
 services:
-  react:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  myapp:
+    restart: always
+    image: sjsj1123/docker-re
     ports:
       - "80:80"
+    mem_limit: 128m
