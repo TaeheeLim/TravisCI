@@ -14,3 +14,15 @@ script:
 
 after_succcess:
   - echo "Succeeded"
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-northeast-2"
+  app: "dockerapp"
+  env: "Dockerapp-env"
+  bucket_name: "elasticbeanstalk-ap-northeast-2-872515267023"
+  bucket_path: "dockerapp"
+  on:
+    branch: main
+access_key_id: $AWS_ACCESS_KEY
+secret_access_key: $AWS_SECRET_ACCESS_KEY
